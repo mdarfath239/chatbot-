@@ -13,8 +13,8 @@ sendButton.addEventListener("click", handleSend);
 const loading = document.createElement("div");
 loading.className = "my-4 flex justify-start";
 loading.innerHTML = `
-  <div class="p-4 bg-gray-800 rounded-xl w-fit">
-    <p>Loading...</p>
+  <div class="p-4 text-gray-100  w-fit">
+    <p>Thinking...</p>
   </div>`;
 
 // Hide splash after first *sent* message
