@@ -8,30 +8,71 @@
 </head>
 <body class="bg-neutral-900 text-white min-h-screen flex flex-col">
 
-    <!-- Chat messages -->
-    <div id="chat-container" class="flex-1 overflow-y-auto p-4 max-w-3xl w-full mx-auto mb-32">
-      <!-- messages will appear here dynamically -->
+  <!-- Chat messages -->
+  <div id="chat-container" class="flex-1 overflow-y-auto p-4 max-w-3xl w-full mx-auto mb-32">
+    <!-- messages will appear here dynamically -->
+  </div>
+
+  <!-- Splash overlay (WELCOME + Spline) -->
+<!-- Splash overlay (minimal + bigger embed) -->
+<div id="splash" class="fixed inset-0 z-30 flex items-center justify-center bg-neutral-900">
+  <div class="flex flex-col items-center gap-4 px-6 text-center">
+    <!-- Replaced title -->
+  <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8">
+    What can I help with?
+  </h1>
+
+    <!-- Larger, clean iframe (no border/box/shadow) -->
+    <div class="w-[92vw] max-w-5xl h-[60vh] md:h-[78vh] rounded-none overflow-hidden">
+      <iframe
+        src="https://my.spline.design/genkubgreetingrobot-e8E6ErMOzZ0rse1iXYjwcmOj/"
+        frameborder="0"
+        class="w-full h-full"
+        allow="autoplay"
+      ></iframe>
     </div>
-  
-    <!-- ChatGPT-style message box -->
-    <div class="fixed bottom-0 left-0 w-full bg-gradient-to-t from-neutral-900 via-neutral-900/95 to-transparent pt-4 pb-6">
-      <div class="max-w-3xl mx-auto px-4">
-        <div class="flex items-center bg-neutral-800 border border-neutral-700 rounded-2xl px-4 py-3 shadow-lg">
-          <input 
-            id="chat-input"
-            type="text" 
-            placeholder="Message Chatbot..." 
-            class="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none text-base"
-          />
-          <button 
-            id="send-button"
-            class="ml-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg px-4 py-2 font-medium transition">
-            Send
-          </button>
-        </div>
-        <p class="text-center text-gray-500 text-xs mt-2">Chatbot may make mistakes. Check important info.</p>
+    <!-- Removed the helper text -->
+  </div>
+</div>
+
+
+  <!-- ChatGPT-style message box -->
+  <!-- <div class="fixed bottom-0 left-0 w-full bg-gradient-to-t from-neutral-900 via-neutral-900/95 to-transparent pt-4 pb-6 z-40">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="flex items-center bg-neutral-800 border border-neutral-700 rounded-2xl px-4 py-3 shadow-lg">
+        <input 
+          id="chat-input"
+          type="text" 
+          placeholder="Message Chatbot..." 
+          class="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none text-base"
+        />
+        <button 
+          id="send-button"
+          class="ml-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg px-4 py-2 font-medium transition">
+          Send
+        </button>
       </div>
+      <p class="text-center text-gray-500 text-xs mt-2">Chatbot may make mistakes. Check important info.</p>
     </div>
-<script src="app.js"></script>
+  </div> -->
+
+  <div class="fixed bottom-0 left-0 w-full bg-gradient-to-t from-neutral-900 via-neutral-900/95 to-transparent pt-4 pb-6 z-40">
+    <div class="w-[855px] mx-[600px] px-4">
+      <div class="flex items-center bg-neutral-800 border border-neutral-700 rounded-2xl px-4 py-3 shadow-lg focus-within:ring-1 focus-within:ring-indigo-500">
+        <input 
+          id="chat-input"
+          type="text" 
+          placeholder="Message Chatbot..." 
+          class="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none text-base"
+        />
+      </div>
+      <p class="text-center text-gray-500 text-xs mt-2" id="send-button">
+        <!-- Press <span class="text-indigo-400 font-medium">Enter</span> to send -->
+        <p class="text-center text-gray-500 text-xs mt-2">Chatbot may make mistakes. Check important info.</p>
+      </p>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
 </body>
 </html>
